@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Архив</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+	<div class="header">
+		<a href="{{ url_for('index') }}" class="btns index_h_а">
+			<img src="{{ url_for('static', filename='imgs/home.png') }}" class="ico_btn">
+			На главную
+		</a>
+		<form method="get">
+			<input type="text" name="s" placeholder="Введите ФИО, населенный пункт или школу" class="search_inp">
+			<input type="submit" value="" class="search_subm">
+			<img src="{{ url_for('static', filename='imgs/search.png') }}" class="ico_search">
+		</form>
+	</div>
+	<form class="sort" method="get">
+		<input name="y" type="submit" class="but_sort {{getActiveBtn(request.args.get('y') ,'y=2022')}}" value='2022'>
+		<input name="y" type="submit" class="but_sort {{getActiveBtn(request.args.get('y') ,'y=2023')}}" value='2023'>
+		<input name="y" type="submit" class="but_sort {{getActiveBtn(request.args.get('y') ,'y=2024')}}" value='2024'>
+	</form>
+
+	<div class="archive_box">
+		{% for post in posts| sort(attribute="year", reverse=true) %}
+		<div class="post_bl">
+			<span class="rec_ico"></span>
+
+			<div class="category_post">
+				{% if post.category==0 %}
+					{% if post.year==2024%}
+						5-9 класс
+					{% else %}
+						10-13 лет
+					{% endif %}
+				{% elif post.category==1 %}
+					{% if post.year==2024%}
+						10-11 класс
+					{% else %}
+						14-17 лет
+					{% endif %}
+				{% endif %}
+			</div>
+			<div class="locality_post">{{ post.locality }}</div>
+			<iframe src="{{ post.video_url }}" width="600" height="337" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen class="vk_player"></iframe>
+			<div class="participants_post">{{ post.participants }}</div>
+			<div class="e_institution_post">{{ post.e_institution }}</div>
+			<div class="description_post">{{ post.description }}</div>
+
+		</div>
+		{% else %}
+		<p class="no_work">
+			Пока нет работ выбранного года
+		</p>
+
+		{% endfor %}
+	</div>
+</body>
+
+</html>

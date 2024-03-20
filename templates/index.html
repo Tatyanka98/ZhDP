@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+	<meta charset="utf-8">
+	<title>Железные дороги победы</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+	<div class="header">
+		<img src="{{ url_for('static', filename='imgs/logo.png') }}" class="logo_h"></img>
+		<a href="./static/docs/Положение_ЖДП.pdf" target="_blank" class="btns polozhenie_h">
+			<img src="{{ url_for('static', filename='imgs/polozhenie.png') }}" class="ico_btn">
+			Положение
+		</a>
+		<a href="#" class="apply_h btns ">
+<!--			url_for('file_drop')-->
+			Подать заявку
+		</a>
+		<a href="{{ url_for('archive') }}" class="btns search_h">
+			<img src="{{ url_for('static', filename='imgs/search.png') }}" class="ico_btn">
+			Поиск работ
+		</a>
+		<p class="small_txt date_h">
+			с 3 апреля по 9 мая
+		</p>
+		<a  class="about_h anchor" onclick="getpos(document.getElementById('about'))">
+			О конкурсе
+		</a>
+		<a class="why_h anchor" onclick="getpos(document.getElementById('why'))">
+			Зачем участвовать?
+		</a>
+		<a  class="jury_h anchor" onclick="getpos(document.getElementById('jury'))">
+			Жюри
+		</a>
+		<a  class="adviсe_h anchor" onclick="getpos(document.getElementById('advice'))">
+			Советы
+		</a>
+		<a  class="work_h anchor" onclick="getpos(document.getElementById('dev'))">
+			Авторы
+		</a>
+		<a href="{{ url_for('archive') }}" class="archive_h anchor">
+			Архив
+		</a>
+	</div>
+
+	<div class="pre_bl main_bl" >
+
+		<img src="{{ url_for('static', filename='imgs/logo.png') }}" class="logo_land">
+		<p class="about_txt">
+			III Всероссийский конкурс видеороликов о роли железной дороги в годы Великой Отечественной войны.
+		</p>
+		<a href="./static/docs/Положение_ЖДП.pdf" target="_blank" class="btns polozhenie_ab">
+			<img src="{{ url_for('static', filename='imgs/polozhenie.png') }}" class="ico_btn">
+			Положение
+		</a>
+		<a href="#" class="btns apply_ab">
+<!--			url_for('file_drop')-->
+			Подать заявку
+		</a>
+
+		<div class="min_pros">
+			<img src="{{ url_for('static', filename='imgs/orel_logo_text.png') }}" class="logo_min">
+			<p class="min_pros_txt">
+				Конкурс включен в перечень, утвержденный Минпросвещение России на 2023/24 учебный год
+			</p>
+		</div>
+
+	</div>
+
+	<div class="about_bl main_bl" id='about'>
+		<div class="title_main">
+			О конкурсе
+		</div>
+		<p class="about_txt_s">
+			Железная дорога сейчас — это километры магистралей, соединяющие самые отдаленные уголки нашей необъятной страны, а во время Великой Отечественной войны железные дороги спасали миллионы людей.
+			<br><br>
+			Миссия нашего конкурса заключается в том, чтобы сохранить память о подвигах наших соотечественников.
+			<br><br>
+			Цель: рассказать о судьбах и подвиге людей, трудившихся на железных дорогах в годы войны, с помощью видеоинтервью.
+			<br><br>
+			В Конкурсе могут принять участие школьники от 10 до 17 лет. Принимаются индивидуальные и групповые работы.
+			<br><br><br>
+			Срок подачи заявок: 3 апреля - 9 мая 2024 (включительно)
+		</p>
+		<img class="train_img" src="{{ url_for('static', filename='imgs/train.png') }}"></img>
+		<img class="fog_img" src="{{ url_for('static', filename='imgs/fog.png') }}"></img>
+	</div>
+	<div class="why_bl main_bl" id="why">
+		<div class="title_main">
+			Зачем участвовать?
+		</div>
+		<div class="flex_bl">
+			<div class="card_why">
+				<div class="card_why_red">
+					<img src="{{ url_for('static', filename='imgs/book.png') }}" class="card_why_ico">
+					<p class="card_why_txt">
+						Узнать о героях-соотечественниках и подвигах,которые они совершили.
+					</p>
+				</div>
+			</div>
+			<div class="card_why">
+				<div class="card_why_red">
+					<img src="{{ url_for('static', filename='imgs/lamp.png') }}" class="card_why_ico">
+					<p class="card_why_txt">
+						Получить новые знания и навыки в сфере медиа. Освоить жанр видеоинтервью.
+					</p>
+				</div>
+			</div>
+			<div class="card_why">
+				<div class="card_why_red">
+					<img src="{{ url_for('static', filename='imgs/gift.png') }}" class="card_why_ico">
+					<p class="card_why_txt">
+						Получить классные и полезные Призы, которые помогут  освоить навыки съемки видеороликов и интервью.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--	<div class="jury_bl main_bl" id="jury">-->
+<!--		<div class="title_main">-->
+<!--			Жюри-->
+<!--		</div>-->
+<!--		<div class="flex_bl jury">-->
+
+<!--			<div class="jury_box">-->
+<!--				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_jury">-->
+<!--				<div class="jury_direction">-->
+<!--					<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--					<div class="jury_job">Организация организация Орг ани зация орг анизация Орг анизация орга низация</div>-->
+<!--					<div class="btn_jury">Смотреть <img src="{{ url_for('static', filename='imgs/watch.png') }}" class="watch_jury"></div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="jury_box">-->
+<!--				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_jury">-->
+<!--				<div class="jury_direction">-->
+<!--					<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--					<div class="jury_job">Организация организация Орг ани зация орг анизация Орг анизация орга низация</div>-->
+<!--					<div class="btn_jury">Смотреть <img src="{{ url_for('static', filename='imgs/watch.png') }}" class="watch_jury"></div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="jury_box">-->
+<!--				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_jury">-->
+<!--				<div class="jury_direction">-->
+<!--					<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--					<div class="jury_job">Организация организация Орг ани зация орг анизация Орг анизация орга низация</div>-->
+<!--					<div class="btn_jury">Смотреть <img src="{{ url_for('static', filename='imgs/watch.png') }}" class="watch_jury"></div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="jury_box">-->
+<!--				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_jury">-->
+<!--				<div class="jury_direction">-->
+<!--					<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--					<div class="jury_job">Организация организация Орг ани зация орг анизация Орг анизация орга низация</div>-->
+<!--					<div class="btn_jury">Смотреть <img src="{{ url_for('static', filename='imgs/watch.png') }}" class="watch_jury"></div>-->
+<!--				</div>-->
+<!--			</div>-->
+
+<!--		</div>-->
+<!--	</div>-->
+	<div class="adviсe_bl main_bl" id='advice'>
+		<div class="title_main">
+			Советы участникам
+		</div>
+		<div class="chat_advice">
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Как не волноваться в кадре?
+				</div>
+			</div>
+
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					Волноваться перед съемкой - нормально, все люди волнуются, но если ты потратишь достаточно времени на подготовку, то волнения будет меньше.
+				</div>
+			</div>
+
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Как подготовится к интервью?
+				</div>
+			</div>
+			
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					1. Подумай, какова цель интервью. О чем оно?<br>
+					2. Узнай своего героя и найди к нему подход.<br>
+					3. Заранее составь список вопросов и покажи его интервьюируемому. Помни, что вопросы должны быть открытыми.
+				</div>
+			</div>
+
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Подскажи, на что обратить внимание во время съемки?
+				</div>
+			</div>
+			
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					Расположи героев в кадре таким образом, чтобы естесственный свет падал на их лица или используй осветительое оборудование.<br>
+					Самое важное: не снимай против света! 
+				</div>
+			</div>
+
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Какие композиционные правила нужно учесть?
+				</div>
+			</div>
+			
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					Обрати внимание на “правило третей”, а при съемке с нескольких камер соблюдай правило операторской оси ;) <br><br>
+					Правильный свет и композиция помогут тебе получить хороший результат при съемке как на камеру, так и на смартфон.
+				</div>
+			</div>
+
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Как не волноваться в кадре?
+				</div>
+			</div>
+			
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					Волноваться перед съемкой - нормально, все люди волнуются, но если ты потратишь достаточно времени на подготовку, то волнения будет меньше.
+				</div>
+			</div>
+
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Как получить качественный звук?
+				</div>
+			</div>
+			
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					Выбери нешумную локацию <br>
+					Используй микрофон или петлички <br>
+					Если эти советы реализовать невозможно, то улучшить звук поможет нейросеть <a href="https://podcast.adobe.com/" target="_blank" class="a_in_txt">podcast.adobe.com</a>
+				</div>
+			</div>
+
+			<div class="message_from_bl">
+				<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="ava_from">
+				<div class="message_from">
+					Спасибо за советы!
+				</div>
+			</div>
+			
+			<div class="message_to_bl">
+				<img src="{{ url_for('static', filename='imgs/veronika_ava.jpg') }}" class="ava_to">
+				<div class="message_to">
+					<b>Вероника</b>
+					<br>
+					Пожалуйста! Желаю удачи и вдохновения!
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="history_bl main_bl">
+		<div class="title_main">
+			История конкурса
+		</div>
+		<p class="history_txt">
+			Железная дорога сыграла важную роль в достижении победы в Великой Отечественной Войне. Из тыла на фронт доставлялись провизия и одежда, оружие и боеприпасы. В обратном направлении, из центральной России на Урал, Сибирь и на Дальний Восток эвакуировались миллионы мирных жителей, тысячи заводов и комбинатов Советского Союза. 
+			<br><br>
+			Чтобы показать масштаб этого подвига в 2022 году был организован Всероссийский конкурс видеороликов «Железные дороги Победы». Результатом конкурса, помимо подведения итогов стала часовая передача с участием 19 городов России от Уссурийска до Волгограда, в съемках приняло участие 27 команд и более 100 юных железнодорожников.
+		</p>
+		<iframe width="672" height="378" src="https://www.youtube.com/embed/gMU9jWWUXDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="history_vid"></iframe>
+	</div>
+<!--	<div class="dev_bl main_bl" id="dev">-->
+<!--		<div class="title_main">-->
+<!--			Команда разработчиков-->
+<!--		</div>-->
+<!--		<div class="dev_com_box">-->
+<!--			<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_dev">-->
+<!--			<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--			<div class="dev_disc">Зона ответственности Зона ответственности</div>-->
+<!--		</div>-->
+<!--		<div class="dev_com_box">-->
+<!--			<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_dev">-->
+<!--			<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--			<div class="dev_disc">Зона ответственности Зона ответственности</div>-->
+<!--		</div>-->
+<!--		<div class="dev_com_box">-->
+<!--			<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_dev">-->
+<!--			<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--			<div class="dev_disc">Зона ответственности Зона ответственности</div>-->
+<!--		</div>-->
+<!--		<div class="dev_com_box">-->
+<!--			<img src="{{ url_for('static', filename='imgs/user_ava.png') }}" class="face_dev">-->
+<!--			<div class="jury_name">Фамилия Имя Отчество</div>-->
+<!--			<div class="dev_disc">Зона ответственности Зона ответственности</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="footer"><img src="{{ url_for('static', filename='imgs/logo_kvant_w.png') }}" class="logo_f_kvant">
+		<img src="{{ url_for('static', filename='imgs/rzd_logo.png') }}" class="logo_f_rzd">
+		<div class="min_pros min_f">
+			<img src="{{ url_for('static', filename='imgs/orel_logo_text.png') }}" class="logo_min">
+			<p class="min_pros_txt">
+				Конкурс включен в перечень, утвержденный Минпросвещение России на 2023/24 учебный год
+			</p>
+		</div>
+		<div>
+			<p class="vk_txt">
+				Сообщество конкурса в Вконтакте
+			</p>
+			<a href="https://vk.com/event219650731"><img src="{{ url_for('static', filename='imgs/vk_logo.png' )}}" class="logo_vk"></a>
+		</div>
+	</div>
+
+	<script>
+		function getpos(myElement)
+        {
+            var offset = 100;
+            window.scrollTo(0, 0);
+            var rect = myElement.getBoundingClientRect();
+            window.scrollTo(rect.left , rect.top - offset);
+        }
+	</script>
+</body>
+</html>

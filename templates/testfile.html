@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style_test.css') }}">
+	<title>Подача заявки</title>
+</head>
+<body>
+	<div class="header">
+		<img src="{{ url_for('static', filename='imgs/logo.png') }}" class="logo_h_f">
+
+		<a href="{{ url_for('index') }}" class="btns index_h_а">
+			<img src="{{ url_for('static', filename='imgs/home.png') }}" class="ico_btn">
+			На главную
+		</a>
+
+		<a href="./static/docs/Положение_ЖДП.pdf" target="_blank" class="btns polozhenie_h_f">
+			<img src="{{ url_for('static', filename='imgs/polozhenie.png') }}" class="ico_btn">
+			Положение
+		</a>
+
+	</div>
+
+	<div class="main_bl_file">
+
+		<form method="POST" enctype=multipart/form-data>
+	 	<div class="page1">
+			<input type="text" name="title" class="title_inp" placeholder="Введите название работы">
+			<span class="underline_title"></span>
+			<div class="upload-container">
+		        <input type="text" name='video_file' id="file_upload" placeholder="Вставьте ссылку на ваш пост в ВК с конкурсным видео">
+		    </div>
+		    <textarea name="description" placeholder="Введите описание к вашему интервью..." class="description_ta"></textarea>
+
+		    <span class="category_txt">Возрастная категория:</span>
+		    <input type="hidden" name="category" value="0">
+		    <input class="cat_check cc0" id="cat0" type="button" name="but1" value="5-9 класс" onclick='changeColor()'>
+
+		    <input class="cat_check cc1" id="cat1" type="button" name="but" value="10-11 класс" onclick='changeColor()'>
+
+
+
+		</div>
+
+		<div class="page2">
+			<label for="region" class="region_txt">Регион:</label>
+		    <input type="text" name="region" id="region" class="region_inp">
+
+		    <label for="locality" class="locality_txt">Населенный пункт:</label>
+		    <input type="text" name="city" id="locality" class="locality_inp">
+
+		    <input type="text" name="e_institution" class="e_institution_inp" placeholder='Образовательное учреждение ОАО "РЖД" (ДЖД, школы и ДТ Кванториум)'>
+
+		    <input type="text" name="address" class="address_inp" placeholder='Адрес образовательного учреждения'>
+
+		    <input type="text" name="participants" class="participants_inp" placeholder='Состав команды (ФИО и возраст детей)'>
+
+		    <input type="text" name="curator" class="curator_inp" placeholder='ФИО куратора'>
+
+		    <input type="tel" name="phone" class="phone_inp" placeholder='Контактный телефон куратора'>
+
+		    <input type="email" name="email" class="email_inp" placeholder='E-mail куратора'>
+
+		    <input type="text" name="where_find" class="where_find_inp" placeholder='Откуда вы узнали о конкурсе'>
+
+		    <img src="{{ url_for('static', filename='imgs/attention.png') }}" class="attention_ico">
+
+		    <div class="attention_txt">Пожалуйста, убедитесь что все введенные данные написаны правильно и страница с видео в ВК является ОТКРЫТОЙ, а затем нажмите на кнопку “Отправить” <br>
+			<br>
+				Нажимая на кнопку "Отправить", вы даёте свое согласие на обработку персональных данных
+			</div>
+
+		    <input type="submit" value="Отправить" class="btns send_inp">
+		    <img src="{{ url_for('static', filename='imgs/mail.png') }}" class="ico_btn_send">
+		</div>
+
+		</form>
+
+	</div>
+
+	<div class="footer">
+
+		<img src="{{ url_for('static', filename='imgs/logo_kvant_w.png') }}" class="logo_f_kvant">
+		<img src="{{ url_for('static', filename='imgs/rzd_logo.png') }}" class="logo_f_rzd">
+		<div class="min_pros min_f">
+			<img src="{{ url_for('static', filename='imgs/orel_logo_text.png') }}" class="logo_min">
+			<p class="min_pros_txt">
+				Конкурс включен в перечень, утвержденный Минпросвещение России на 2022/23 учебный год
+			</p>
+		</div>
+		<div>
+			<p class="vk_txt">
+				Сообщество конкурса в Вконтакте
+			</p>
+			<a href="https://vk.com/event219650731"><img src="{{ url_for('static', filename='imgs/vk_logo.png' )}}" class="logo_vk"></a>
+		</div>
+	</div>
+
+	<script>
+
+				function uploadFiles() {
+
+	        var files = document.getElementById('file_upload').files;
+	        if(files.length==0){
+	            alert("Please first choose or drop any file(s)...");
+	            return;
+	        }
+	        var filenames="";
+	        for(var i=0;i<files.length;i++){
+	            filenames+=files[i].name+"\n";
+	        }
+	    }
+	            
+	</script>
+	<script>
+		function changeColor(e) {
+			var submits = document.getElementsByName("category");
+			console.log(submits['0']);
+			var sender = (e && e.target) || (window.event && window.event.srcElement);
+			if (sender.name == 'but1'){
+				document.getElementById('cat0').style.backgroundColor = 'red';
+				document.getElementById('cat1').style.backgroundColor = '';
+				submits[0].value='0';
+			}
+			else if(sender.name == 'but'){
+			submits[0].value='1';
+			document.getElementById('cat1').style.backgroundColor = 'red';
+			document.getElementById('cat0').style.backgroundColor = '';
+			}
+
+		}
+	</script>
+</body>
+</html>
