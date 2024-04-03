@@ -554,9 +554,9 @@ background: gray;
 }
 
 .upload-container {
-	position: absolute;
-	top: 80px;
-	left: calc(50% - 750px/2);
+	/* position: absolute; */
+	/* top: 80px; */
+	/* left: calc(50% - 750px/2); */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -619,11 +619,11 @@ background: gray;
 }
 
 .title_inp {
-	position: absolute;
+	/*position: absolute;*/
 	width: 740px;
 	height: 69px;
-	left: calc(50% - 740px/2);
-	top: 15px;
+	/*left: calc(50% - 740px/2);
+	top: 15px;*/
 	padding: 0;
 	outline: none;
 	border: 0;
@@ -641,21 +641,21 @@ background: gray;
 }
 
 .underline_title {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 0px;
-	left: calc(50% - 740px/2);
-	top: 65px;
+	/* left: calc(50% - 740px/2); */
+	/* top: 65px; */
 
 	border: 1.5px solid #000000;
 }
 
 .description_ta {
-	position: absolute;
+	/* position: absolute; */
 	width: 720px;
 	height: 200px;
-	left: calc(50% - 740px/2);
-	top: 130px;
+	/* left: calc(50% - 740px/2);
+	top: 130px; */
 	resize: none;
 	border: 0;
 	outline: none;
@@ -675,11 +675,11 @@ background: gray;
 }
 
 .category_txt {
-	position: absolute;
+	/* position: absolute; */
 	width: 192px;
 	height: 35px;
-	left: 175px;
-	top: 350px;
+	/* left: 175px;
+	top: 350px; */
 
 	font-family: 'RussianRail G';
 	font-style: normal;
@@ -694,11 +694,11 @@ background: gray;
 }
 
 .cat_check {
-	position: absolute;
+	/* position: absolute; */
 	width: 245px;
 	height: 31px;
 	
-	top: 350px;
+	/* top: 350px; */
 
 	background: rgba(40, 40, 40, 0.19);
 	border-radius: 9px;
@@ -731,11 +731,11 @@ background: gray;
 }
 
 .region_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 523px;
 	height: 31px;
-	left: calc(50% - 533px/2 + 110.5px);
-	top: 392px;
+	/* left: calc(50% - 533px/2 + 110.5px);
+	top: 392px; */
 	border: 0;
 	outline: none;
 	padding-left: 10px;
@@ -752,11 +752,11 @@ background: gray;
 }
 
 .region_txt {
-	position: absolute;
+	/* position: absolute; */
 	width: 75px;
 	height: 35px;
-	left: 290px;
-	top: 392px;
+	/* left: 290px;
+	top: 392px; */
 
 	font-family: 'RussianRail G';
 	font-style: normal;
@@ -771,11 +771,11 @@ background: gray;
 }
 
 .locality_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 523px;
 	height: 31px;
-	left: calc(50% - 533px/2 + 110.5px);
-	top: 437px;
+	/* left: calc(50% - 533px/2 + 110.5px);
+	top: 437px; */
 	border: 0;
 	outline: none;
 	padding-left: 10px;
@@ -792,11 +792,11 @@ background: gray;
 }
 
 .locality_txt {
-	position: absolute;
+	/* position: absolute; */
 	width: 157px;
 	height: 35px;
-	left: 202px;
-	top: 437px;
+	/* left: 202px; */
+	/* top: 437px; */
 
 	font-family: 'RussianRail G';
 	font-style: normal;
@@ -811,11 +811,11 @@ background: gray;
 }
 
 .e_institution_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 486px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 486px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -832,11 +832,11 @@ background: gray;
 }
 
 .address_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 535px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 535px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -853,11 +853,11 @@ background: gray;
 }
 
 .participants_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 585px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 585px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -874,11 +874,11 @@ background: gray;
 }
 
 .curator_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 633px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 633px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -895,11 +895,11 @@ background: gray;
 }
 
 .phone_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 681px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 681px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -916,11 +916,11 @@ background: gray;
 }
 
 .email_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 730px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 730px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -937,11 +937,11 @@ background: gray;
 }
 
 .where_find_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 778px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 778px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -1325,18 +1325,83 @@ justify-content: space-between;
     background-image: url('../static/imgs/user_ava.png');
 }
 .page1{
-        position: absolute;
+	
+    position: absolute;
     height: 971px;
     width: 1100px;
     z-index: 5;
     background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
 }
 .page2{
+	width: 1100px;
+	
       background: #fff;
     position: absolute;
-    margin-top: -365px;
+    margin-top: 0px;
     height: 971px;
     width: 1100px;
+	align-items: center;
     z-index: 1;
 }
+.vozrast_cat{
+	width: 740px;
+	display: flex;
+	justify-content: space-between;
+}
+.region_div{
+	width: 740px;
+	display: flex;
+	justify-content: space-between;
+}
+.nasel_punkt{
+	width:740px;
+	display: flex;
+	justify-content: space-between;
+}
+.btn_nxt_pg{
+    background: #DD322A;
+	position: relative;
+	left: 25%;
+	margin-top: 5%;
+	margin-bottom: 3%;
+    /* position: absolute;
+    bottom: 400px;
+    right: 15px; */
+	width: 200px;
+	height: 35px;
+	border-radius: 10px;
+
+	font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 35px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding-left: 20px;
+
+	color: #FFFFFF;
+	transition: filter 0.5s;
+}
+.btn_nxt_pg:hover{
+cursor: pointer;
+filter:  brightness(70%);
+
+}
+.btn_bck_pg{
+    background: #DD322A;
+    /* position: absolute;
+    bottom: 100px;
+    left: 15px; */
+}
+.btn_bck_pg:hover{
+cursor: pointer;
+filter:  brightness(70%);
+
 }
