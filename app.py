@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect,flash, url_for
+from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import json
@@ -25,17 +25,17 @@ group_id = -216704492
 posts = 2
 
 
-
-
 def getActiveBtn(active, aside):
     # print(str(active))
     # print(aside,end="\n\n end \n")
 
     return "but_sort_active" if str(active) in aside else ""
 
+
 @application.context_processor
 def context_processor():
     return dict(getActiveBtn=getActiveBtn)
+
 
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -83,7 +83,9 @@ def archive():
         print(2)
         posts = []
         for post in all_posts:
-            if (search.lower() in post.title.lower()) or (search.lower() in post.description.lower()) or (search.lower() in post.locality.lower()) or (search.lower() in post.e_institution.lower()) or (search.lower() in post.region.lower()) or (search.lower() in post.participants.lower()):
+            if (search.lower() in post.title.lower()) or (search.lower() in post.description.lower()) or (
+                    search.lower() in post.locality.lower()) or (search.lower() in post.e_institution.lower()) or (
+                    search.lower() in post.region.lower()) or (search.lower() in post.participants.lower()):
                 posts.append(post)
     if search != None and year != None:
         print(3)
@@ -91,14 +93,16 @@ def archive():
         for post in all_posts:
             if ((search.lower() in post.title.lower()) or (search.lower() in post.description.lower()) or (
                     search.lower() in post.locality.lower()) or (search.lower() in post.e_institution.lower()) or (
-                    search.lower() in post.region.lower()) or (search.lower() in post.participants.lower())) and post.year == int(year):
+                        search.lower() in post.region.lower()) or (
+                        search.lower() in post.participants.lower())) and post.year == int(year):
                 posts.append(post)
     return render_template('archive.html', posts=posts)
+
 
 @application.route('/file', methods=['GET', 'POST'])
 def file_drop():
     if request.method == 'POST':
-        #добавить трай эксепт и флеш уведомление для невозможности отправки пустоты
+        # добавить трай эксепт и флеш уведомление для невозможности отправки пустоты
         try:
             print(request.form)
             video_file = request.form.get('video_file')
@@ -139,7 +143,7 @@ def file_drop():
             # os.remove(f'{new_post.id}.mp4')
             # new_post.video_id = video.get('video_id')
             # db.session.commit()
-            group_id =int(video_file[video_file.find('-'):video_file.find('_')])
+            group_id = int(video_file[video_file.find('-'):video_file.find('_')])
 
             response = requests.get(
                 url=url,
@@ -149,7 +153,7 @@ def file_drop():
                     'v': '5.199',
                 }
             )
-            new_post.video_id =response.json()['response']['items'][0]['attachments'][0]["video"]["id"]
+            new_post.video_id = response.json()['response']['items'][0]['attachments'][0]["video"]["id"]
             new_post.video_url = f'https://vk.com/video_ext.php?oid={group_id}&id={new_post.video_id}&hd=3'
             db.session.commit()
         except:
@@ -223,8 +227,6 @@ def file_drop_old(year_to_drop):
 @application.route('/test_form')
 def testform():
     return render_template('testfile.html')
-
-
 
 
 if __name__ == '__main__':

@@ -18,7 +18,7 @@ input, textarea {
 	border: 0;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder, textarea::placeholder,  {
 	color: #0004;
 }
 
@@ -568,14 +568,15 @@ background: gray;
 	/*outline: 6px dashed rgba(221, 50, 42, 0.44);
 	outline-offset: -10px;*/
 	padding: 10px 0px 10px 0px;
-	text-align: center !important;
+	/*text-align: center !important;*/
+	padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 16px;
-	width: 740px;
-	color: #910600;
+	width: 720px;
+	color: #000000;
 	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
 	border-radius: 9px;
 
@@ -620,20 +621,22 @@ background: gray;
 
 .title_inp {
 	/*position: absolute;*/
-	width: 740px;
+	width: 720px;
 	height: 69px;
 	/*left: calc(50% - 740px/2);
 	top: 15px;*/
 	padding: 0;
 	outline: none;
 	border: 0;
-
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 32px;
 	line-height: 32px;
-	text-align: center;
+	background: #FFFFFF;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 9px;
 }
 
 .title_inp::placeholder {
@@ -812,11 +815,11 @@ background: gray;
 
 .e_institution_inp {
 	/* position: absolute; */
-	width: 740px;
+	width: 720px;
 	height: 37px;
 	/* left: calc(50% - 740px/2 + 7px);
 	top: 486px; */
-
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -824,7 +827,7 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
+	text-align: left;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -833,7 +836,7 @@ background: gray;
 
 .address_inp {
 	/* position: absolute; */
-	width: 740px;
+	width: 720px;
 	height: 37px;
 	/* left: calc(50% - 740px/2 + 7px);
 	top: 535px; */
@@ -845,8 +848,7 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
-
+    padding-left:20px;
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 9px;
@@ -866,8 +868,8 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
-
+	text-align: left;
+    padding-left: 10px;
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 9px;
@@ -875,11 +877,11 @@ background: gray;
 
 .curator_inp {
 	/* position: absolute; */
-	width: 740px;
+	width: 720px;
 	height: 37px;
 	/* left: calc(50% - 740px/2 + 7px);
 	top: 633px; */
-
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -887,7 +889,7 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
+
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -896,11 +898,11 @@ background: gray;
 
 .phone_inp {
 	/* position: absolute; */
-	width: 740px;
+	width: 720px;
 	height: 37px;
 	/* left: calc(50% - 740px/2 + 7px);
 	top: 681px; */
-
+padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -908,7 +910,6 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -917,11 +918,11 @@ background: gray;
 
 .email_inp {
 	/* position: absolute; */
-	width: 740px;
+	width: 720px;
 	height: 37px;
 	/* left: calc(50% - 740px/2 + 7px);
 	top: 730px; */
-
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -929,7 +930,6 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -938,11 +938,11 @@ background: gray;
 
 .where_find_inp {
 	/* position: absolute; */
-	width: 740px;
+	width: 720px;
 	height: 37px;
 	/* left: calc(50% - 740px/2 + 7px);
 	top: 778px; */
-
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -950,7 +950,6 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -970,7 +969,7 @@ background: gray;
 	width: 469px;
 	height: 37px;
 	left: 226px;
-	top: 874px;
+	top: 844px;
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -985,7 +984,7 @@ background: gray;
 
 .send_inp {
 	left: calc(50% - 220px/2 + 267px);
-	top: 874px;
+	top: 844px;
 	background: #DD322A;
 }
 
@@ -994,7 +993,7 @@ background: gray;
 	width: 27px;
 	height: 27px;
 	left: 715px;
-	top: 877px;
+	top: 847px;
 }
 
 .post_bl {
@@ -1339,7 +1338,7 @@ justify-content: space-between;
 .page2{
 	width: 1100px;
 	
-      background: #fff;
+    background: #fff;
     position: absolute;
     margin-top: 0px;
     height: 971px;
@@ -1349,7 +1348,6 @@ justify-content: space-between;
     display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
 }
 .vozrast_cat{
 	width: 740px;
@@ -1370,7 +1368,7 @@ justify-content: space-between;
     background: #DD322A;
 	position: relative;
 	left: 25%;
-	margin-top: 5%;
+	margin-top: 2%;
 	margin-bottom: 3%;
     /* position: absolute;
     bottom: 400px;
@@ -1403,6 +1401,10 @@ filter:  brightness(70%);
     /* position: absolute;
     bottom: 100px;
     left: 15px; */
+    position: relative;
+    left: -265px;
+
+
 }
 .btn_bck_pg:hover{
 cursor: pointer;
@@ -1420,4 +1422,61 @@ filter:  brightness(70%);
 	align-items: center;
 	text-align: right;
 
-	color: #000000;}
+	color: #000000;
+}
+#div_categ0{
+    margin-top: 24px;
+    height:600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#div_categ1{
+    margin-top: 24px;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.participants_date{
+    font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	background: #FFFFFF;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 9px;
+	width: 150px;
+	height: 37px;
+}
+.dr_opis{
+    margin-left:5px;
+    font-family: 'RussianRail G';
+	font-style: normal;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+
+	color: #000000;
+}
+.dr_div{
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    color: #0004;
+}
+input[type='date']{
+color: #0004;
+}
+.emtpy_border{
+	border: #910600 solid 2px;
+	
+}

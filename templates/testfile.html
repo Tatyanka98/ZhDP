@@ -27,39 +27,39 @@
 		<form method="POST" enctype=multipart/form-data>
 	 	<div class="page1" id="page1">
 			<h3 class="title_form">Форма заявки</h3>
-			<input type="text" name="title" class="title_inp" placeholder="Введите название работы">
+			<input type="text" name="title" class="title_inp perebor"  placeholder="Введите название работы">
 			<span class="underline_title"></span>
 			<div class="upload-container">
-		        <input type="text" name='video_file' id="file_upload" placeholder="Вставьте ссылку на ваш пост в ВК с конкурсным видео">
+		        <input type="text" name='video_file' class="perebor" id="file_upload " value="" placeholder="Вставьте ссылку на ваше видео в ВК с конкурсным видео">
 		    </div>
-		    <textarea name="description" placeholder="Введите описание к вашему интервью..." class="description_ta"></textarea>
+		    <textarea name="description" placeholder="Введите описание к вашему интервью..." class="description_ta perebor"></textarea>
 			<div class="vozrast_cat">
 				<span class="category_txt">Возрастная категория:</span>
-				<input type="hidden" name="category" value="0">
+				<input type="hidden" name="category" value="5">
 				<input class="cat_check cc0" id="cat0" type="button" name="but1" value="5-9 класс" onclick='changeColor()'>
 
 				<input class="cat_check cc1" id="cat1" type="button" name="but" value="10-11 класс" onclick='changeColor()'>
 			</div>
 			<div class="region_div">
 				<label for="region" class="region_txt">Регион:</label>
-		    	<input type="text" name="region" id="region" class="region_inp">
+		    	<input type="text" name="region" id="region" class="region_inp perebor">
 			</div>
 			<div class="nasel_punkt">
 				<label for="locality" class="locality_txt">Населенный пункт:</label>
-		    	<input type="text" name="city" id="locality" class="locality_inp">
+		    	<input type="text" name="city" id="locality" class="locality_inp perebor">
 			</div>
 
-		    <input type="text" name="e_institution" class="e_institution_inp" placeholder='Образовательное учреждение'>
+		    <input type="text" name="e_institution" class="e_institution_inp perebor" placeholder='Образовательное учреждение'>
 
-		    <input type="text" name="address" class="address_inp" placeholder='Адрес образовательного учреждения'>
+		    <input type="text" name="address" class="address_inp perebor" placeholder='Адрес образовательного учреждения'>
 
-		    <input type="text" name="curator" class="curator_inp" placeholder='ФИО куратора'>
+		    <input type="text" name="curator" class="curator_inp perebor" placeholder='ФИО куратора'>
 
-		    <input type="tel" name="phone" class="phone_inp" placeholder='Контактный телефон куратора'>
+		    <input type="tel" name="phone" class="phone_inp perebor" placeholder='Контактный телефон куратора'>
 
-		    <input type="email" name="email" class="email_inp" placeholder='E-mail куратора'>
+		    <input type="email" name="email" class="email_inp perebor" placeholder='E-mail куратора'>
 
-		    <input type="text" name="where_find" class="where_find_inp" placeholder='Откуда вы узнали о конкурсе'>
+		    <input type="text" name="where_find" class="where_find_inp perebor" placeholder='Откуда вы узнали о конкурсе'>
 
 
 			<div id="next_page" class=" btn_nxt_pg">Далее</div>
@@ -105,18 +105,86 @@
 	<script>
 		let btn_btn_next = document.getElementById('next_page');
 		let btn_btn_back = document.getElementById('back_page');
+
+		//let pereb_inp = document.getElementsByClassName('perebor');
+		//for (let i=0; i<pereb_inp.length; i++){
+		//	pereb_inp[i].addEventListener("change", pereb_check)
+		//}
+
+
 		btn_btn_next.addEventListener("click",zz)
+
+
 		btn_btn_back.addEventListener("click",bb)
+		
+		
+
+
+		// anhor_video.addEventListener("change", check_anhor)
+
+		
+
+		function check_anhor(elem){
+			let temp_an_vk ='https://vk.com/video-219650731_456239143'
+			let reg_e = /^https:\/\/vk.com\/video-\d{9}_\d{9}$/
+			if ( !reg_e.test(elem.value)){
+				elem.classList.add('emtpy_border')
+				return false
+			}
+			else{
+				elem.classList.remove('emtpy_border')
+				return true
+			}
+		}
+
 		function zz(e){
-		let btn_next = document.getElementById('page1');
-		btn_next.style.zIndex = "0";
+			let pereb_inp = document.getElementsByClassName('perebor');
+			let next_flag = 1
+			for (let i=0; i<pereb_inp.length; i++){
+				
+				if (pereb_inp[i].value == ''){
+					
+					pereb_inp[i].classList.add('emtpy_border')
+					next_flag = 0
+				}
+				else{
+					pereb_inp[i].classList.remove('emtpy_border')
+				}
+			}
+			let category0 = document.getElementById('cat0');
+			let category1 = document.getElementById('cat1');
+			var submits = document.getElementsByName("category");
+			// console.log(submits[0].value !='0' && submits[0].value !='1')
+			
+			if (submits[0].value !='0' && submits[0].value !='1'){
+				next_flag = 0
+				category0.classList.add('emtpy_border')
+				category1.classList.add('emtpy_border')
+			}
+			else{
+				
+				category0.classList.remove('emtpy_border')
+				category1.classList.remove('emtpy_border')
+
+			}
+			let anhor_video = document.getElementById('file_upload ') 
+			if (!check_anhor(anhor_video)){
+				next_flag = 0
+			}
+			if (next_flag ==1){
+				let btn_next = document.getElementById('page1');
+				btn_next.style.zIndex = "0";
+			}
+			
 		}
 		function bb(e){
 		let btn_next = document.getElementById('page1');
 		btn_next.style.zIndex = "5";
 		}
 
-
+		function ss(e) {
+	        e.target.style.color='black'
+	    }
 
 		function uploadFiles() {
 
@@ -133,6 +201,7 @@
 
 
 
+
 		function changeColor(e) {
 			var submits = document.getElementsByName("category");
 			console.log(submits['0']);
@@ -141,56 +210,84 @@
 			if (sender.name == 'but1'){
 
 				document.getElementById('cat0').style.backgroundColor = 'red';
+				document.getElementById('cat0').style.color= 'white';
 				document.getElementById('cat1').style.backgroundColor = '';
+				document.getElementById('cat1').style.color= 'black';
 				submits[0].value='0';
 				let test = document.getElementsByName('category')[0].value;
 				let page_two = document.getElementById('page2')
-				let h3_vstr = document.getElementById('t_vstr');
+				let h3_vstr = document.getElementById('back_page');
 				let div_uchast = document.createElement('div');
 				div_uchast.setAttribute('id',"div_categ0")
 				if (document.getElementById('div_categ1')!=null){
 					document.getElementById('div_categ1').remove()
 				}
 				for (let i=5; i>0;i--){
-				let inp_fio0 = document.createElement('input');
-				inp_fio0.className = "participants_inp";
-				inp_fio0.setAttribute('name',`participants${i}`)
-				inp_fio0.setAttribute('type',"text")
-				inp_fio0.setAttribute('placeholder',`ФИО ${i}-ого участника`)
-				let inp_dr0 = document.createElement('input');
-				inp_dr0.className = "participants_inp";
-				inp_dr0.setAttribute('name',`date_participants${i}`)
-				inp_dr0.setAttribute('type',"date")
-				h3_vstr.after(div_uchast);
-				div_uchast.prepend(inp_fio0)
-				inp_fio0.after(inp_dr0);
+					let inp_fio0 = document.createElement('input');
+					inp_fio0.className = "participants_inp";
+					inp_fio0.setAttribute('name',`participants${i}`)
+					inp_fio0.setAttribute('type',"text")
+					inp_fio0.setAttribute('id',"fio_uch")
+					inp_fio0.setAttribute('placeholder',`ФИО ${i}-ого участника`)
+					let div_dr = document.createElement('div')
+					div_dr.setAttribute("class","dr_div")
+					let opis_dr = document.createElement('label')
+					opis_dr.setAttribute("for","fio_uch")
+					opis_dr.setAttribute("class","dr_opis")
+					opis_dr.innerHTML = 'Дата рождения:'
+					let inp_dr0 = document.createElement('input');
+					inp_dr0.className = "participants_date";
+					inp_dr0.setAttribute('name',`date_participants${i}`)
+					inp_dr0.setAttribute('type',"date")
+					inp_dr0.addEventListener("change", ss)
+
+
+					h3_vstr.after(div_uchast);
+					div_uchast.prepend(inp_fio0)
+					inp_fio0.after(div_dr);
+					div_dr.append(opis_dr);
+					div_dr.append(inp_dr0);
 				}
 			}
 			else if(sender.name == 'but'){
 				submits[0].value='1';
 				document.getElementById('cat1').style.backgroundColor = 'red';
+				document.getElementById('cat1').style.color= 'white';
 				document.getElementById('cat0').style.backgroundColor = '';
+				document.getElementById('cat0').style.color= 'black';
 				let test = document.getElementsByName('category')[0].value;
 				let page_two = document.getElementById('page2');
-				let h3_vstr = document.getElementById('t_vstr');
+				let h3_vstr = document.getElementById('back_page');
 				let div_uchast = document.createElement('div');
 				div_uchast.setAttribute('id',"div_categ1")
 				if (document.getElementById('div_categ0')!=null){
 					document.getElementById('div_categ0').remove()
 				}
 				for (let i=3; i>0;i--){
-				let inp_fio1 = document.createElement('input');
-				inp_fio1.className = "participants_inp";
-				inp_fio1.setAttribute('name',`participants${i}`)
-				inp_fio1.setAttribute('type',"text")
-				inp_fio1.setAttribute('placeholder',`ФИО ${i}-ого участника`)
-				let inp_dr1 = document.createElement('input');
-				inp_dr1.className = "participants_inp";
-				inp_dr1.setAttribute('name',`date_participants${i}`)
-				inp_dr1.setAttribute('type',"date")
-				h3_vstr.after(div_uchast);
-				div_uchast.prepend(inp_fio1);
-				inp_fio1.after(inp_dr1);
+					let inp_fio1 = document.createElement('input');
+					inp_fio1.className = "participants_inp";
+					inp_fio1.setAttribute('name',`participants${i}`)
+					inp_fio1.setAttribute('type',"text")
+					inp_fio1.setAttribute('id',"fio_uch")
+					inp_fio1.setAttribute('placeholder',`ФИО ${i}-ого участника`)
+					let div_dr = document.createElement('div')
+					div_dr.setAttribute("class","dr_div")
+					let opis_dr = document.createElement('label')
+					opis_dr.setAttribute("for","fio_uch")
+					opis_dr.setAttribute("class","dr_opis")
+					opis_dr.innerHTML = 'Дата рождения:'
+					let inp_dr1 = document.createElement('input');
+					inp_dr1.className = "participants_date";
+					inp_dr1.setAttribute('name',`date_participants${i}`)
+					inp_dr1.setAttribute('type',"date")
+					inp_dr1.addEventListener("change", ss)
+
+
+					h3_vstr.after(div_uchast);
+					div_uchast.prepend(inp_fio1)
+					inp_fio1.after(div_dr);
+					div_dr.append(opis_dr);
+					div_dr.append(inp_dr1);
 				}
 				}
 
