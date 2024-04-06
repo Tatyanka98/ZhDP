@@ -57,7 +57,7 @@
 
 		    <input type="tel" name="phone" class="phone_inp perebor" placeholder='Контактный телефон куратора'>
 
-		    <input type="email" name="email" class="email_inp perebor" placeholder='E-mail куратора'>
+		    <input type="email" id ='email' name="email" class="email_inp perebor" placeholder='E-mail куратора'>
 
 		    <input type="text" name="where_find" class="where_find_inp perebor" placeholder='Откуда вы узнали о конкурсе'>
 
@@ -123,10 +123,21 @@
 		// anhor_video.addEventListener("change", check_anhor)
 
 		
+		function check_email(elem){
+			let reg_exp_email = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
+			if ( !reg_exp_email.test(elem.value)){
+				elem.classList.add('emtpy_border')
+				return false
+			}
+			else{
+				elem.classList.remove('emtpy_border')
+				return true
+			}
+		}
 
 		function check_anhor(elem){
-			let temp_an_vk ='https://vk.com/video-219650731_456239143'
 			let reg_e = /^https:\/\/vk.com\/video-\d{9}_\d{9}$/
+			
 			if ( !reg_e.test(elem.value)){
 				elem.classList.add('emtpy_border')
 				return false
@@ -169,6 +180,10 @@
 			}
 			let anhor_video = document.getElementById('file_upload ') 
 			if (!check_anhor(anhor_video)){
+				next_flag = 0
+			}
+			let email_div = document.getElementById('email')
+			if (!check_email(email_div)){
 				next_flag = 0
 			}
 			if (next_flag ==1){
