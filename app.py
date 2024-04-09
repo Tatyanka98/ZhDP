@@ -2,10 +2,37 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import json
-
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 # import vk_api
 # from vk_api import VkUpload
 # import os
+
+
+def send_mail(email: str, text: list):
+    login = 'VictoRailways@yandex.ru'
+    password = 'iwzkbnevhgmjxjja'
+    text_mail = ''
+    print(text, type(text))
+    for i in text:
+        print(i, type(i))
+        text_mail+=i+'\n'
+    msg = MIMEText(f'Добрый день, Ваша заявка на участие в конкурсе принята в обработку. \n\nДанные которые мы от Вас получили:\n {text_mail}\n\nВ случае некорректого получения нами данных, свяжитесь с нами в группе в ВКонтакте. ', 'plain','utf-8' )
+    msg['Subject'] = Header('Конкурс  видеоинтервью "Железные дороги победы"')
+    msg['From'] = login
+    msg['To'] = email
+
+    s = smtplib.SMTP('smtp.yandex.ru', 587, timeout=10)
+    try:
+        s.starttls()
+        s.login(login,password)
+        s.sendmail(msg['From'],email, msg.as_string())
+    except:
+        print('Error send mail')
+    finally:
+        s.quit()
+
 
 year_now = 2024
 
@@ -50,12 +77,22 @@ class Posts(db.Model):
     locality = db.Column(db.String, nullable=False)
     e_institution = db.Column(db.String, nullable=False)
     address = db.Column(db.String, nullable=False)
-    participants = db.Column(db.String, nullable=False)
+    participants1 = db.Column(db.String, nullable=False)
+    partdr1 = db.Column(db.String, nullable=False)
+    participants2 = db.Column(db.String)
+    partdr2 = db.Column(db.String)
+    participants3 = db.Column(db.String)
+    partdr3 = db.Column(db.String)
+    participants4 = db.Column(db.String)
+    partdr4 = db.Column(db.String)
+    participants5 = db.Column(db.String)
+    partdr5 = db.Column(db.String)
     curator = db.Column(db.String, nullable=False)
     curator_phone = db.Column(db.String, nullable=False)
     curator_email = db.Column(db.String, nullable=False)
     where_find = db.Column(db.String, nullable=False)
     year = db.Column(db.Integer, nullable=False)
+    moder = db.Column(db.Integer, default =0)
 
 
 application.app_context().push()
@@ -113,7 +150,18 @@ def file_drop():
             locality = request.form.get('city')
             e_institution = request.form.get('e_institution')
             address = request.form.get('address')
-            participants = request.form.get('participants')
+            participants1 = request.form.get('participants1')
+            partdr1 = request.form.get('date_participants1')
+            participants2 = request.form.get('participants2')
+            print(type(participants1))
+            print(type(partdr1))
+            partdr2 = request.form.get('date_participants2')
+            participants3 = request.form.get('participants3')
+            partdr3 = request.form.get('date_participants3')
+            participants4 = request.form.get('participants4')
+            partdr4 = request.form.get('date_participants4')
+            participants5 = request.form.get('participants5')
+            partdr5 = request.form.get('date_participants5')
             curator = request.form.get('curator')
             curator_phone = request.form.get('phone')
             curator_email = request.form.get('email')
@@ -125,7 +173,16 @@ def file_drop():
                              locality=locality,
                              e_institution=e_institution,
                              address=address,
-                             participants=participants,
+                             participants1=participants1,
+                             partdr1 = partdr1,
+                             participants2=participants2,
+                             partdr2 = partdr2,
+                             participants3=participants3,
+                             partdr3 = partdr3,
+                             participants4=participants4,
+                             partdr4 = partdr4,
+                             participants5=participants5,
+                             partdr5 = partdr5,
                              curator=curator,
                              curator_phone=curator_phone,
                              curator_email=curator_email,
@@ -156,6 +213,32 @@ def file_drop():
             new_post.video_id = response.json()['response']['items'][0]['attachments'][0]["video"]["id"]
             new_post.video_url = f'https://vk.com/video_ext.php?oid={group_id}&id={new_post.video_id}&hd=3'
             db.session.commit()
+            text_mail=[
+                 f'Название работы: {title}',
+                 f'Ссылка на видео интервью: {video_file}',
+                 f'Описание: {description}',
+                 f"Категория (если Ваша категория 10-15,то должен быть 0,иначе 1): {category}",
+                 f'Регион: {region}',
+                 f'Населенный пункт: {locality}',
+                 f'Образовательное учреждение: {e_institution}',
+                 f'Адрес ОУ: {address}',
+                 f'ФИО 1ого учасника: {participants1}',
+                 f'Дата рождения 1ого участника: {partdr1}',
+                 f'ФИО 2ого учасника: {participants2}',
+                 f'Дата рождения 2ого участника: {partdr2}',
+                 f'ФИО 3ого учасника: {participants3}',
+                 f'Дата рождения 3ого участника: {partdr3}',
+                 f'ФИО 4ого учасника (актуально только для категории 10-15 лет): {participants4}',
+                 f'Дата рождения 4ого участника: {partdr4}',
+                 f'ФИО 5ого учасника(актуально только для категории 10-15 лет): {participants5}',
+                 f'Дата рождения 5ого участника: {partdr5}',
+                 f'ФИО куратора: {curator}',
+                 f'Телефон кулатора: {curator_phone}',
+                 f'Email куратора: {curator_email}',
+                 f'Откуда о нас узнали: {where_find}'
+
+            ]
+            send_mail(curator_email, text_mail)
         except:
             # flash()
             return render_template('file.html')

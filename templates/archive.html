@@ -26,31 +26,49 @@
 
 	<div class="archive_box">
 		{% for post in posts| sort(attribute="year", reverse=true) %}
-		<div class="post_bl">
-			<span class="rec_ico"></span>
+		{% if post.moder==1 %}
+			<div class="post_bl">
+				<span class="rec_ico"></span>
 
-			<div class="category_post">
-				{% if post.category==0 %}
-					{% if post.year==2024%}
-						10-15 лет
-					{% else %}
-						10-13 лет
+				<div class="category_post">
+					{% if post.category==0 %}
+						{% if post.year==2024%}
+							10-15 лет
+						{% else %}
+							10-13 лет
+						{% endif %}
+					{% elif post.category==1 %}
+						{% if post.year==2024%}
+							16-18 лет
+						{% else %}
+							14-17 лет
+						{% endif %}
 					{% endif %}
-				{% elif post.category==1 %}
-					{% if post.year==2024%}
-						16-18 лет
-					{% else %}
-						14-17 лет
+				</div>
+				<div class="locality_post">{{ post.locality }}</div>
+				<iframe src="{{ post.video_url }}" width="600" height="337" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen class="vk_player"></iframe>
+				<div class="participants_post">
+					{% if post.participants1!='' and post.participants1!=None %}
+					{{ post.participants1 }}
 					{% endif %}
-				{% endif %}
+					{% if post.participants2!='' and post.participants2!=None %}
+					, {{ post.participants2 }}
+					{% endif %}
+					{% if post.participants3!='' and post.participants3!=None %}
+					, {{ post.participants3 }}
+					{% endif %}
+					{% if post.participants4!='' and post.participants4!=None %}
+					, {{ post.participants4 }}
+					{% endif %}
+					{% if post.participants5!='' and post.participants5!=None %}
+					, {{ post.participants5 }}
+					{% endif %}
+				</div>
+				<div class="e_institution_post">{{ post.e_institution }}</div>
+				<div class="description_post">{{ post.description }}</div>
+
 			</div>
-			<div class="locality_post">{{ post.locality }}</div>
-			<iframe src="{{ post.video_url }}" width="600" height="337" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen class="vk_player"></iframe>
-			<div class="participants_post">{{ post.participants }}</div>
-			<div class="e_institution_post">{{ post.e_institution }}</div>
-			<div class="description_post">{{ post.description }}</div>
-
-		</div>
+		{% endif %}
 		{% else %}
 		<p class="no_work">
 			Пока нет работ выбранного года

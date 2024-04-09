@@ -18,7 +18,7 @@ input, textarea {
 	border: 0;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder, textarea::placeholder,  {
 	color: #0004;
 }
 
@@ -63,8 +63,8 @@ input::placeholder, textarea::placeholder {
 	left: calc(50% - 200px/2 + 165px);
 	top: 43px;
 	padding-left: 0;
-background: gray;
-	/*background: #DD322A*/
+    background: #DD322A;
+	/*background: gray;*/
 }
 
 .search_h {
@@ -235,8 +235,9 @@ background: gray;
 	left: calc(50% - 220px/2 - 450px);
 	top: 255px;
 
-	/*background: #DD322A;*/
-	background: gray;
+	/*background: gray;*/
+
+	background: #DD322A;
 }
 
 .main_bl {
@@ -504,7 +505,7 @@ background: gray;
 
 .min_pros_txt {
 	position: absolute;
-	width: 320px;
+	width: 313px;
 	color: #fff;
 	left: 150px;
 	top: 15px;
@@ -554,9 +555,9 @@ background: gray;
 }
 
 .upload-container {
-	position: absolute;
-	top: 80px;
-	left: calc(50% - 750px/2);
+	/* position: absolute; */
+	/* top: 80px; */
+	/* left: calc(50% - 750px/2); */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -568,21 +569,22 @@ background: gray;
 	/*outline: 6px dashed rgba(221, 50, 42, 0.44);
 	outline-offset: -10px;*/
 	padding: 10px 0px 10px 0px;
-	text-align: center !important;
+	/*text-align: center !important;*/
+	padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 16px;
-	width: 740px;
-	color: #910600;
+	width: 720px;
+	color: #000000;
 	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
 	border-radius: 9px;
 
 }
 .upload-container input:hover {
 	/*background: #fee;*/
-}   
+}
 
 .upload-btn {
 	margin-left: 300px;
@@ -619,21 +621,23 @@ background: gray;
 }
 
 .title_inp {
-	position: absolute;
-	width: 740px;
+	/*position: absolute;*/
+	width: 720px;
 	height: 69px;
-	left: calc(50% - 740px/2);
-	top: 15px;
+	/*left: calc(50% - 740px/2);
+	top: 15px;*/
 	padding: 0;
 	outline: none;
 	border: 0;
-
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 32px;
 	line-height: 32px;
-	text-align: center;
+	background: #FFFFFF;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 9px;
 }
 
 .title_inp::placeholder {
@@ -641,21 +645,21 @@ background: gray;
 }
 
 .underline_title {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 0px;
-	left: calc(50% - 740px/2);
-	top: 65px;
+	/* left: calc(50% - 740px/2); */
+	/* top: 65px; */
 
 	border: 1.5px solid #000000;
 }
 
 .description_ta {
-	position: absolute;
+	/* position: absolute; */
 	width: 720px;
 	height: 200px;
-	left: calc(50% - 740px/2);
-	top: 130px;
+	/* left: calc(50% - 740px/2);
+	top: 130px; */
 	resize: none;
 	border: 0;
 	outline: none;
@@ -675,11 +679,11 @@ background: gray;
 }
 
 .category_txt {
-	position: absolute;
+	/* position: absolute; */
 	width: 192px;
 	height: 35px;
-	left: 175px;
-	top: 350px;
+	/* left: 175px;
+	top: 350px; */
 
 	font-family: 'RussianRail G';
 	font-style: normal;
@@ -694,11 +698,11 @@ background: gray;
 }
 
 .cat_check {
-	position: absolute;
+	/* position: absolute; */
 	width: 245px;
 	height: 31px;
-	
-	top: 350px;
+
+	/* top: 350px; */
 
 	background: rgba(40, 40, 40, 0.19);
 	border-radius: 9px;
@@ -731,11 +735,11 @@ background: gray;
 }
 
 .region_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 523px;
 	height: 31px;
-	left: calc(50% - 533px/2 + 110.5px);
-	top: 392px;
+	/* left: calc(50% - 533px/2 + 110.5px);
+	top: 392px; */
 	border: 0;
 	outline: none;
 	padding-left: 10px;
@@ -752,11 +756,11 @@ background: gray;
 }
 
 .region_txt {
-	position: absolute;
+	/* position: absolute; */
 	width: 75px;
 	height: 35px;
-	left: 290px;
-	top: 392px;
+	/* left: 290px;
+	top: 392px; */
 
 	font-family: 'RussianRail G';
 	font-style: normal;
@@ -771,11 +775,11 @@ background: gray;
 }
 
 .locality_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 523px;
 	height: 31px;
-	left: calc(50% - 533px/2 + 110.5px);
-	top: 437px;
+	/* left: calc(50% - 533px/2 + 110.5px);
+	top: 437px; */
 	border: 0;
 	outline: none;
 	padding-left: 10px;
@@ -792,11 +796,11 @@ background: gray;
 }
 
 .locality_txt {
-	position: absolute;
+	/* position: absolute; */
 	width: 157px;
 	height: 35px;
-	left: 202px;
-	top: 437px;
+	/* left: 202px; */
+	/* top: 437px; */
 
 	font-family: 'RussianRail G';
 	font-style: normal;
@@ -811,12 +815,12 @@ background: gray;
 }
 
 .e_institution_inp {
-	position: absolute;
-	width: 740px;
+	/* position: absolute; */
+	width: 720px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 486px;
-
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 486px; */
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -824,7 +828,7 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
+	text-align: left;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -832,11 +836,11 @@ background: gray;
 }
 
 .address_inp {
-	position: absolute;
-	width: 740px;
+	/* position: absolute; */
+	width: 720px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 535px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 535px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -845,19 +849,18 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
-
+    padding-left:20px;
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 9px;
 }
 
 .participants_inp {
-	position: absolute;
+	/* position: absolute; */
 	width: 740px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 585px;
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 585px; */
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -866,20 +869,20 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
-
+	text-align: left;
+    padding-left: 10px;
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
 	border-radius: 9px;
 }
 
 .curator_inp {
-	position: absolute;
-	width: 740px;
+	/* position: absolute; */
+	width: 720px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 633px;
-
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 633px; */
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -887,7 +890,7 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
+
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -895,12 +898,12 @@ background: gray;
 }
 
 .phone_inp {
-	position: absolute;
-	width: 740px;
+	/* position: absolute; */
+	width: 720px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 681px;
-
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 681px; */
+padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -908,7 +911,6 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -916,12 +918,12 @@ background: gray;
 }
 
 .email_inp {
-	position: absolute;
-	width: 740px;
+	/* position: absolute; */
+	width: 720px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 730px;
-
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 730px; */
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -929,7 +931,6 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -937,12 +938,12 @@ background: gray;
 }
 
 .where_find_inp {
-	position: absolute;
-	width: 740px;
+	/* position: absolute; */
+	width: 720px;
 	height: 37px;
-	left: calc(50% - 740px/2 + 7px);
-	top: 778px;
-
+	/* left: calc(50% - 740px/2 + 7px);
+	top: 778px; */
+    padding-left:20px;
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
 	font-weight: 500;
@@ -950,7 +951,6 @@ background: gray;
 	line-height: 16px;
 	display: flex;
 	align-items: center;
-	text-align: center;
 
 	background: #FFFFFF;
 	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -970,7 +970,7 @@ background: gray;
 	width: 469px;
 	height: 37px;
 	left: 226px;
-	top: 874px;
+	top: 844px;
 
 	font-family: 'RussianRail G Pro';
 	font-style: normal;
@@ -985,7 +985,7 @@ background: gray;
 
 .send_inp {
 	left: calc(50% - 220px/2 + 267px);
-	top: 874px;
+	top: 844px;
 	background: #DD322A;
 }
 
@@ -994,7 +994,7 @@ background: gray;
 	width: 27px;
 	height: 27px;
 	left: 715px;
-	top: 877px;
+	top: 847px;
 }
 
 .post_bl {
@@ -1063,7 +1063,8 @@ position: absolute;
 }
 .participants_post {
 	position: relative;
-	width: 380px;
+	/*width: 380px;*/
+	width: 100%;
 	margin-top: 10px;
 	left: calc(50% - 380px/2 - 110px);
 
@@ -1324,5 +1325,160 @@ justify-content: space-between;
     margin-bottom: 20px;
     background-image: url('../static/imgs/user_ava.png');
 }
+.page1{
+
+    position: absolute;
+    height: 971px;
+    width: 1100px;
+    z-index: 5;
+    background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.page2{
+	width: 1100px;
+
+    background: #fff;
+    position: absolute;
+    margin-top: 0px;
+    height: 971px;
+    width: 1100px;
+	align-items: center;
+    z-index: 1;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.vozrast_cat{
+	width: 740px;
+	display: flex;
+	justify-content: space-between;
+}
+.region_div{
+	width: 740px;
+	display: flex;
+	justify-content: space-between;
+}
+.nasel_punkt{
+	width:740px;
+	display: flex;
+	justify-content: space-between;
+}
+.btn_nxt_pg{
+    background: #DD322A;
+	position: relative;
+	left: 25%;
+	margin-top: 2%;
+	margin-bottom: 3%;
+    /* position: absolute;
+    bottom: 400px;
+    right: 15px; */
+	width: 200px;
+	height: 35px;
+	border-radius: 10px;
+
+	font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 35px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding-left: 20px;
+
+	color: #FFFFFF;
+	transition: filter 0.5s;
+}
+.btn_nxt_pg:hover{
+cursor: pointer;
+filter:  brightness(70%);
+
+}
+.btn_bck_pg{
+    background: #DD322A;
+    /* position: absolute;
+    bottom: 100px;
+    left: 15px; */
+    position: relative;
+    left: -265px;
 
 
+}
+.btn_bck_pg:hover{
+cursor: pointer;
+filter:  brightness(70%);
+
+}
+.title_form{
+
+	font-family: 'RussianRail G';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+
+	color: #000000;
+}
+#div_categ0{
+    margin-top: 24px;
+    height:600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#div_categ1{
+    margin-top: 24px;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.participants_date{
+    font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	background: #FFFFFF;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 9px;
+	width: 150px;
+	height: 37px;
+}
+.dr_opis{
+    margin-left:5px;
+    font-family: 'RussianRail G';
+	font-style: normal;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+
+	color: #000000;
+}
+.dr_div{
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    color: #0004;
+}
+input[type='date']{
+color: #0004;
+}
+.emtpy_border{
+	border: #910600 solid 2px;
+
+}
