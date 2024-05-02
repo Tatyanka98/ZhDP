@@ -25,7 +25,7 @@
 	</form>
 
 	<div class="archive_box">
-		{% for post in posts| sort(attribute="year", reverse=true) %}
+		{% for post in posts[:6]| sort(attribute="year", reverse=true) %}
 		{% if post.moder==1 %}
 			<div class="post_bl">
 				<span class="rec_ico"></span>
@@ -77,5 +77,8 @@
 		{% endfor %}
 	</div>
 </body>
+<script>
+	console.log(posts)
+</script>
 
 </html>

@@ -104,7 +104,7 @@ def index():
     return render_template('index.html')
 
 
-@application.route('/archive', methods=['GET'])
+@application.route('/archive', methods=['GET', 'POST'])
 def archive():
     year = request.args.get('y')
     search = request.args.get('s')
@@ -119,11 +119,14 @@ def archive():
     if search != None and year == None:
         print(2)
         posts = []
+        print(all_posts)
         for post in all_posts:
+
             if (search.lower() in post.title.lower()) or (search.lower() in post.description.lower()) or (
                     search.lower() in post.locality.lower()) or (search.lower() in post.e_institution.lower()) or (
-                    search.lower() in post.region.lower()) or (search.lower() in post.participants.lower()):
+                    search.lower() in post.region.lower()) or (search.lower() in post.participants1.lower()) :
                 posts.append(post)
+
     if search != None and year != None:
         print(3)
         posts = []
@@ -143,6 +146,7 @@ def file_drop():
         try:
             print(request.form)
             video_file = request.form.get('video_file')
+            print(video_file)
             title = request.form.get('title')
             description = request.form.get('description')
             category = int(request.form.get('category'))
@@ -153,8 +157,8 @@ def file_drop():
             participants1 = request.form.get('participants1')
             partdr1 = request.form.get('date_participants1')
             participants2 = request.form.get('participants2')
-            print(type(participants1))
-            print(type(partdr1))
+            # print(type(participants1))
+            # print(type(partdr1))
             partdr2 = request.form.get('date_participants2')
             participants3 = request.form.get('participants3')
             partdr3 = request.form.get('date_participants3')
@@ -210,8 +214,9 @@ def file_drop():
                     'v': '5.199',
                 }
             )
-            new_post.video_id = response.json()['response']['items'][0]['attachments'][0]["video"]["id"]
-            new_post.video_url = f'https://vk.com/video_ext.php?oid={group_id}&id={new_post.video_id}&hd=3'
+            # new_post.video_id = response.json()['response']['items'][0]['attachments'][0]["video"]["id"]
+            # new_post.video_url = f'https://vk.com/video_ext.php?oid={group_id}&id={new_post.video_id}&hd=3'
+            new_post.video_url =  video_file
             db.session.commit()
             text_mail=[
                  f'Название работы: {title}',
@@ -311,6 +316,9 @@ def file_drop_old(year_to_drop):
 def testform():
     return render_template('testfile.html')
 
+@application.route('/expert')
+def ocenka():
+    return render_template('ocenka.html')
 
 if __name__ == '__main__':
     application.run('0.0.0.0', debug=True)

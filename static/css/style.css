@@ -148,7 +148,14 @@ input::placeholder, textarea::placeholder,  {
     cursor: pointer;
 	color: #FFFFFF;
 }
-
+.anchor_in_info{
+    text-decoration: underline;
+    cursor: pointer;
+	color: #FFFFFF;
+}
+.anchor_in_info:hover {
+	color: #DD322A;
+}
 .anchor:hover {
 	color: #DD322A;
 }
@@ -623,7 +630,7 @@ input::placeholder, textarea::placeholder,  {
 .title_inp {
 	/*position: absolute;*/
 	width: 720px;
-	height: 69px;
+	height: 49px;
 	/*left: calc(50% - 740px/2);
 	top: 15px;*/
 	padding: 0;
@@ -657,7 +664,7 @@ input::placeholder, textarea::placeholder,  {
 .description_ta {
 	/* position: absolute; */
 	width: 720px;
-	height: 200px;
+	height: 100px;
 	/* left: calc(50% - 740px/2);
 	top: 130px; */
 	resize: none;
@@ -964,7 +971,13 @@ padding-left:20px;
 	left: 187px;
 	top: 858px;
 }
-
+.attention_ico1{
+position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 187px;
+	top: 904px;
+}
 .attention_txt {
 	position: absolute;
 	width: 469px;
@@ -982,13 +995,29 @@ padding-left:20px;
 
 	color: #910600;
 }
-
+.instruct_txt{
+    font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	display: flex;
+	align-items: center;
+    text-align: center;
+	color: #910600;
+	margin-top: 5px;
+	margin-bottom:5px;
+	width: 420px;
+}
 .send_inp {
 	left: calc(50% - 220px/2 + 267px);
 	top: 844px;
 	background: #DD322A;
 }
-
+.send_inp:hover {
+    cursor: pointer;
+    filter: brightness(1.4);
+}
 .ico_btn_send {
 	position: absolute;
 	width: 27px;
@@ -1400,13 +1429,49 @@ filter:  brightness(70%);
 }
 .btn_bck_pg{
     background: #DD322A;
-    /* position: absolute;
+     /*position: absolute;
+
     bottom: 100px;
     left: 15px; */
+   /*
+    */
     position: relative;
-    left: -265px;
+    top: 674px;
+    left: -269px;
+    width: 200px;
+	height: 35px;
+	border-radius: 10px;
+	font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 35px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding-left: 20px;
+
+	color: #FFFFFF;
+	transition: filter 0.5s;
 
 
+}
+.attention_txt1{
+position: absolute;
+	width: 469px;
+	height: 37px;
+	left: 226px;
+	top: 894px;
+	font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	display: flex;
+	align-items: center;
+
+	color: #910600;
 }
 .btn_bck_pg:hover{
 cursor: pointer;

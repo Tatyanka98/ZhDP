@@ -29,9 +29,18 @@
 			<h3 class="title_form">Форма заявки</h3>
 			<input type="text" name="title" class="title_inp perebor"  placeholder="Введите название работы">
 			<span class="underline_title"></span>
+
+
 			<div class="upload-container">
 		        <input type="text" name='video_file' class="perebor" id="file_upload " value="" placeholder="Вставьте ссылку на ваше видео в ВК с конкурсным видео">
 		    </div>
+			<div>
+				<span class="instruct_txt">Если ссылка будет некорректной (отличной от инструкции), то мы не получим Вашу работу!
+				<br><br>
+					ВНИМАТЕЛЬНО посмотрите инструкцию ниже:
+				</span>
+				<video src="{{url_for('static', filename='imgs/how_copy_link.mp4')}}" width="400px" controls></video>
+			</div>
 		    <textarea name="description" placeholder="Введите описание к вашему интервью..." class="description_ta perebor"></textarea>
 			<div class="vozrast_cat">
 				<span class="category_txt">Возрастная категория:</span>
@@ -60,15 +69,18 @@
 		    <input type="email" id ='email' name="email" class="email_inp perebor" placeholder='E-mail куратора'>
 
 		    <input type="text" name="where_find" class="where_find_inp perebor" placeholder='Откуда вы узнали о конкурсе'>
+			<img src="{{ url_for('static', filename='imgs/attention.png') }}" class="attention_ico1">
 
-
+			<div class="attention_txt1">
+				Пожалуйста, убедитесь что все введенные данные написаны правильно и страница с видео в ВК является ОТКРЫТОЙ, а затем нажмите на кнопку “Отправить”
+			</div>
 			<div id="next_page" class=" btn_nxt_pg">Далее</div>
 		</div>
 
 		<div class="page2" id="page2">
 			<h3 class="title_form" id="t_vstr">Список участников</h3>
 
-		    <div id="back_page" class="btns btn_bck_pg">Назад</div>
+		    <div id="back_page" class=" btn_bck_pg">Назад</div>
 			<img src="{{ url_for('static', filename='imgs/attention.png') }}" class="attention_ico">
 
 		    <div class="attention_txt">Пожалуйста, убедитесь что все введенные данные написаны правильно и страница с видео в ВК является ОТКРЫТОЙ, а затем нажмите на кнопку “Отправить” <br>
@@ -136,7 +148,7 @@
 		}
 
 		function check_anhor(elem){
-			let reg_e = /^https:\/\/vk.com\/video-\d{1,9}_\d{1,9}$/
+			let reg_e = /^https:\/\/vk.com\/.*$/
 
 			if ( !reg_e.test(elem.value)){
 				elem.classList.add('emtpy_border')
