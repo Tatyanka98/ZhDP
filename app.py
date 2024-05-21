@@ -112,10 +112,12 @@ def archive():
     all_posts = posts
     if year != None and search == None:
         print(1)
+
         posts = []
         for post in all_posts:
             if post.year == int(year):
                 posts.append(post)
+            print(posts)
     if search != None and year == None:
         print(2)
         posts = []
@@ -319,6 +321,9 @@ def testform():
 @application.route('/expert')
 def ocenka():
     return render_template('ocenka.html')
+
+
+
 
 if __name__ == '__main__':
     application.run('0.0.0.0', debug=True)

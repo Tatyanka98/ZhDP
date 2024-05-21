@@ -12,7 +12,7 @@
 			<img src="{{ url_for('static', filename='imgs/polozhenie.png') }}" class="ico_btn">
 			Положение
 		</a>
-		<a href="/file" class="apply_h btns ">
+		<a href="" class="apply_h btns ">
 <!--			url_for('file_drop')-->
 			Подать заявку
 		</a>
@@ -48,12 +48,15 @@
 		<img src="{{ url_for('static', filename='imgs/logo.png') }}" class="logo_land">
 		<p class="about_txt">
 			III Всероссийский конкурс видеороликов о роли железной дороги в годы Великой Отечественной войны.
+			<br><span class="short">Работы финалистов (шорт-лист) будут опубликованы в <a href="{{ url_for('archive', y='2024') }}" class="anchor_in_info">Архиве</a> 22 мая</span>
+
 		</p>
+
 		<a href="./static/docs/Положение_ЖДП.pdf" target="_blank" class="btns polozhenie_ab">
 			<img src="{{ url_for('static', filename='imgs/polozhenie.png') }}" class="ico_btn">
 			Положение
 		</a>
-		<a href="/file" class="btns apply_ab">
+		<a href="" class="btns apply_ab">
 <!--			url_for('file_drop')-->
 			Подать заявку
 		</a>
@@ -82,7 +85,7 @@
 			<br><br>
 			Срок подачи заявок продлён до 17 мая (включительно)
 			<br><br>
-			Шорт-лист будет опубликован в <a href="{{ url_for('archive', y='2024') }}" class="anchor_in_info">Архиве</a> 20 мая
+			Шорт-лист будет опубликован в <a href="{{ url_for('archive', y='2024') }}" class="anchor_in_info">Архиве</a> 22 мая
 			<br><br>
 			Результаты конкурса - 31 мая
 

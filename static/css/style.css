@@ -63,8 +63,8 @@ input::placeholder, textarea::placeholder,  {
 	left: calc(50% - 200px/2 + 165px);
 	top: 43px;
 	padding-left: 0;
-    background: #DD322A;
-	/*background: gray;*/
+    /*background: #DD322A;*/
+	background: gray;
 }
 
 .search_h {
@@ -219,6 +219,15 @@ input::placeholder, textarea::placeholder,  {
 
 	color: #FFFFFF;
 }
+.short{
+font-family: 'FSRAILWAYTT Book';
+	font-style: normal;
+	font-weight: 100;
+	font-size: 15px;
+    color: #dd322a;
+	line-height: 29px;
+}
+
 .no_work{
     margin-top: 80px;
     font-family: 'RussianRail G Pro';
@@ -230,6 +239,7 @@ input::placeholder, textarea::placeholder,  {
     text-align: center;
 	color: #FFFFFF;
 }
+
 .polozhenie_ab {
 	left: calc(50% - 220px/2 - 204px);
 	top: 255px;
@@ -242,9 +252,9 @@ input::placeholder, textarea::placeholder,  {
 	left: calc(50% - 220px/2 - 450px);
 	top: 255px;
 
-	/*background: gray;*/
+	background: gray;
 
-	background: #DD322A;
+	/*background: #DD322A;*/
 }
 
 .main_bl {
@@ -1546,4 +1556,40 @@ color: #0004;
 .emtpy_border{
 	border: #910600 solid 2px;
 
+}
+.hea_txt{
+    margin-top:100px;
+    padding-top: 75px;
+	font-family: 'RussianRail G Pro';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 29px;
+    text-align:center;
+	color: #FFFFFF;
+}
+.body_exp{
+    width:100vw;
+
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box_expert{
+    width: 80%;
+    height: 50%;
+    display: flex;
+}
+.ocenka_video{
+height: 100%;
+width:50%;
+display: flex;
+align-items: center;
+}
+.crit{
+height: 100%;
+width:50%
+}
+.vk_player_oc{
 }
